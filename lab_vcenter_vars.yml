@@ -7,7 +7,7 @@
 #- cluster: Asia-Cluster1
 
 # ESXi settings
-- esxi_hostname: 10.76.33.6
+- esxi_hostname: 192.168.122.211
 - esxi_username: root
 - esxi_password: esxi123
 

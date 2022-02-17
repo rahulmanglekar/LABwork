@@ -7,6 +7,8 @@
     - name: Clone a virtual machine {{ vm_name }} from existing template {{ template_name }}
       vmware_guest:
         name: "{{ vm_name }}"
+        state: present
+        guest_id: rhel7_64Guest
         template: "{{ template_name }}"
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
@@ -14,16 +16,24 @@
         validate_certs: no 
         folder: "{{ folder }}"
         datacenter: "{{ datacenter }}"
+        esxi_hostname: "{{ esxi_hostname }}"
         networks:
           - name: "{{ network }}"
             start_connected: yes
+            device_type: vmxnet3
             type: static
-            ip: 192.168.122.122
+            ip: 192.168.122.12
             netmask: 255.255.255.0
-            gateway: 192.168.122.122
-        customization:
-          hostname : "{{ vm_name }}"
+            gateway: 192.168.122.1
         wait_for_ip_address: yes
+        customization:  
+          domain: "{{ guest_domain }}"
+          dns_servers:
+            - 8.8.8.8
+          dns_suffix:
+            - test.com
+        wait_for_customization: yes
+        delegate_to: localhost
       register: vm_result
 
     - name: Assert that VM is created
