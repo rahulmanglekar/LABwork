@@ -32,7 +32,6 @@
           dns_suffix:
             - "{{ guest_domain }}"
         wait_for_customization: yes
-        delegate_to: localhost
       register: vm_result
 
     - name: Assert that VM is created
