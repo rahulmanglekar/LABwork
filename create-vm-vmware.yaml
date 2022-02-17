@@ -1,0 +1,15 @@
+
+---
+- name: Deploy Virtual Machine from template with PowerON State
+  community.vmware.vmware_content_deploy_template:
+    hostname: '{{ vcenter_hostname }}'
+    username: '{{ vcenter_username }}'
+    password: '{{ vcenter_password }}'
+    template: rhel7
+    datastore: datastore1
+    folder: VM
+    datacenter: Datacenter
+    name: '{{ vm_name }}'
+    state: poweredon
+  delegate_to: localhost
+...
