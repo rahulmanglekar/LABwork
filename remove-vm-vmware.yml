@@ -6,16 +6,17 @@
   hosts: localhost
   tasks:
 
-    - name: Stop "{{ vm_name }}"
-      vmware_guest:
-        hostname: "{{ vcenter_server }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
-        validate_certs: no
-        name: "{{ vm_name }}"
-        state: shutdownguest
-        state_change_timeout: 90
-      delegate_to: localhost
+#
+#    - name: Stop "{{ vm_name }}"
+#      vmware_guest:
+#        hostname: "{{ vcenter_server }}"
+#        username: "{{ vcenter_user }}"
+#       password: "{{ vcenter_pass }}"
+#        validate_certs: no
+#       name: "{{ vm_name }}"
+#        state: shutdownguest
+#       state_change_timeout: 90
+#      delegate_to: localhost
 
     - name: Delete "{{ vm_name }}"
       vmware_guest:
