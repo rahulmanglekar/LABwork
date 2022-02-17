@@ -16,7 +16,7 @@
 - template_name: RHEL7
 - datastore: datastore1
 - network: VM Network
-- folder: /Datacenter/VM/
+- folder: VM
 - dns_server: 8.8.8.8
 
 # Snapshot settings
