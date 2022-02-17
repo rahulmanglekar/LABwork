@@ -28,9 +28,9 @@
         customization:  
           domain: "{{ guest_domain }}"
           dns_servers:
-            - 8.8.8.8
+            - "{{ dns_server }}"
           dns_suffix:
-            - test.com
+            - "{{ guest_domain }}"
         wait_for_customization: yes
         delegate_to: localhost
       register: vm_result

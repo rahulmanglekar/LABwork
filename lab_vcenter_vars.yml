@@ -18,6 +18,7 @@
 - network: VM Network
 - folder: VM
 - dns_server: 8.8.8.8
+- guest_domain: test.com
 
 # Snapshot settings
 - snapshot: fresh_installation
