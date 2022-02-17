@@ -4,7 +4,7 @@
 - vcenter_user: administrator@vsphere.local
 - vcenter_pass: Admin@12345
 - datacenter: Datacenter
-- cluster: Asia-Cluster1
+#- cluster: Asia-Cluster1
 
 # ESXi settings
 - esxi_hostname: 10.76.33.6
@@ -13,7 +13,7 @@
 
 # VM settings
 - vm_name: VM_168
-- template_name: rhel71
+- template_name: RHEL7
 - datastore: datastore1
 - network: VM Network
 - folder: VM
