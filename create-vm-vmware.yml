@@ -8,7 +8,6 @@
       vmware_guest:
         name: "{{ vm_name }}"
         state: present
-        guest_id: rhel7_64Guest
         template: "{{ template_name }}"
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
