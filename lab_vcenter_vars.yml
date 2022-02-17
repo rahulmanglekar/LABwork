@@ -13,7 +13,7 @@
 
 # VM settings
 - vm_name: VM_168
-- template_name: RHEL7
+- template_name: rhel71
 - datastore: datastore1
 - network: VM Network
 - folder: VM
