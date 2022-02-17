@@ -12,7 +12,7 @@
 - esxi_password: esxi123
 
 # VM settings
-- vm_name: VM_168
+- vm_name: VM_128
 - template_name: RHEL7
 - datastore: datastore1
 - network: VM Network
