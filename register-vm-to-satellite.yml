@@ -8,7 +8,7 @@
   hosts: "{{ vm_name }}"
   tasks:
   - name: Register with activationkey
-    redhat_subscription:
+    community.general.redhat_subscription:
       state: present
       activationkey: testlabactivationkey
       org_id: Test_Lab
