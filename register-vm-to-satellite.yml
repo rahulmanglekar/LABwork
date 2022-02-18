@@ -1,6 +1,8 @@
 ---
 - name: Register VM to Satellite
   gather_facts: no
+  collections:
+  - name: community.general
   vars_files:
     - lab_vcenter_vars.yml
   hosts: "{{ vm_name }}"
