@@ -3,7 +3,7 @@
   gather_facts: no
   vars_files:
     - lab_vcenter_vars.yml
-  host: "{{ vm_name }}"
+  hosts: "{{ vm_name }}"
   tasks:
   - name: Register with activationkey
     redhat_subscription:
