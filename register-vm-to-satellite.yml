@@ -1,0 +1,6 @@
+- name: Register with activationkey
+  redhat_subscription:
+    state: present
+    activationkey: testlabactivationkey
+    org_id: Test_Lab
+    autosubscribe: true
