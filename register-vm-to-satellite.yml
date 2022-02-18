@@ -1,6 +1,13 @@
-- name: Register with activationkey
-  redhat_subscription:
-    state: present
-    activationkey: testlabactivationkey
-    org_id: Test_Lab
-    autosubscribe: true
+---
+- name: Register VM to Satellite
+  gather_facts: no
+  vars_files:
+    - lab_vcenter_vars.yml
+  host: "{{ vm_name }}"
+  tasks:
+  - name: Register with activationkey
+    redhat_subscription:
+      state: present
+      activationkey: testlabactivationkey
+      org_id: Test_Lab
+      autosubscribe: true
