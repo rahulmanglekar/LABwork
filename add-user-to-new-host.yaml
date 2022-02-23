@@ -10,16 +10,22 @@
       owner: root
       group: root
 
-  - name: Install tmux package
+  - name: Install vim package
     yum:
       name: vim
       state: present
+
+  - name: Register with activationkey
+    redhat_subscription:
+      state: present
+      activationkey: testlabkey
+      org_id: Test_Lab
 
   - name: Show subscription_status
     debug:
       msg: >
         Subscription Status: {{ foreman.subscription_status_label }}
-        
+
   - name: Show Errata Counts
     debug:
       msg: >
