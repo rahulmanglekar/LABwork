@@ -3,8 +3,6 @@
   vars_files:
     - lab_vcenter_vars.yml
   hosts: localhost
-  collections:
-  - name: community.vmware
   tasks:
     - name: Clone a virtual machine {{ vm_name }} from existing template {{ template_name }}
       community.vmware.vmware_guest:
