@@ -1,6 +1,6 @@
 ---
 - name: Register new host
-  hosts: foreman_rhel7
+  hosts: all
   tasks:
   - name: Set content in /etc/motd 
     copy:
@@ -26,16 +26,3 @@
     yum:
       name: vim
       state: present
-
-#  - name: Show subscription_status
-#    debug:
-#      msg: >
-#        Subscription Status: {{ foreman.subscription_status_label }}
-
-#  - name: Show Errata Counts
-#    debug:
-#      msg: >
-#        Bug fixes: {{ foreman.content_facet_attributes.errata_counts.bugfix }},
-#        Security: {{ foreman.content_facet_attributes.errata_counts.security }},
-#        Enhancement: {{ foreman.content_facet_attributes.errata_counts.enhancement }},
-#        Total: {{ foreman.content_facet_attributes.errata_counts.total }}
