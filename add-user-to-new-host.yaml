@@ -1,5 +1,7 @@
 ---
 - name: Provision new host
+  vars_files:
+    - lab_vcenter_vars.yml
   hosts: "{{ vm_ipaddr }}"
   tasks:
   - name: Set content in /etc/motd 
