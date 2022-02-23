@@ -1,0 +1,15 @@
+---
+- name: Register VM to Satellite
+  gather_facts: no
+  collections:
+  - name: community.general
+  vars_files:
+    - lab_vcenter_vars.yml
+  hosts: "{{ vm_name }}"
+  tasks:
+  - name: Register with activationkey
+    community.general.redhat_subscription:
+      state: present
+      activationkey: testlabactivationkey
+      org_id: Test_Lab
+      autosubscribe: true
