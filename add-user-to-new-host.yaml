@@ -10,16 +10,17 @@
       owner: root
       group: root
 
-  - name: Install vim package
-    yum:
-      name: vim
-      state: present
-
   - name: Register with activationkey
     redhat_subscription:
       state: present
       activationkey: testlabkey
       org_id: Test_Lab
+      force_register: yes
+
+  - name: Install vim package
+    yum:
+      name: vim
+      state: present
 
 #  - name: Show subscription_status
 #    debug:
