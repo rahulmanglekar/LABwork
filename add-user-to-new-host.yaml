@@ -1,6 +1,6 @@
 ---
 - name: Provision new host
-  hosts: all
+  hosts: foreman_rhel7
   tasks:
   - name: Set content in /etc/motd 
     copy:
@@ -10,13 +10,20 @@
       owner: root
       group: root
 
-  - name: Create brian user account
-    user:
-      name: brian
-      uid: 10000
+  - name: Install tmux package
+    yum:
+      name: vim
       state: present
 
-#  - name: Install tmux package
-#    yum:
-#      name: tmux
-#      state: present
+  - name: Show subscription_status
+    debug:
+      msg: >
+        Subscription Status: {{ foreman.subscription_status_label }}
+        
+  - name: Show Errata Counts
+    debug:
+      msg: >
+        Bug fixes: {{ foreman.content_facet_attributes.errata_counts.bugfix }},
+        Security: {{ foreman.content_facet_attributes.errata_counts.security }},
+        Enhancement: {{ foreman.content_facet_attributes.errata_counts.enhancement }},
+        Total: {{ foreman.content_facet_attributes.errata_counts.total }}
