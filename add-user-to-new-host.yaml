@@ -12,7 +12,7 @@
 
   - name: Install the nginx rpm from a remote repo
     yum:
-      name: https://192.168.122.221/pub/katello-ca-consumer-latest.noarch.rpm
+      name: https://satellite69.test.com/pub/katello-ca-consumer-latest.noarch.rpm
       state: present
 
   - name: Register with activationkey
