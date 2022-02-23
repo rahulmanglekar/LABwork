@@ -1,6 +1,6 @@
 ---
 - name: Provision new host
-  hosts: foreman_rhel7
+  hosts: "{{ vm_ipaddr }}"
   tasks:
   - name: Set content in /etc/motd 
     copy:
