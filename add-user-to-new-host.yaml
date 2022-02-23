@@ -20,7 +20,7 @@
       state: present
       activationkey: testlabkey
       org_id: Test_Lab
-      force_register: yes
+#      force_register: yes
 
   - name: Install vim package
     yum:

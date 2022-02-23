@@ -12,7 +12,8 @@
 - esxi_password: esxi123
 
 # VM settings
-- vm_name: VM_128
+- vm_name: VM_129
+- vm_ipaddr: 192.168.122.129
 - template_name: RHEL7
 - datastore: datastore1
 - network: VM Network
