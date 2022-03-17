@@ -6,6 +6,12 @@
 - datacenter: Asia-Datacenter1
 - cluster: Asia-Cluster1
 
+- vcenter_hostname: "192.168.122.212"
+- vcenter_username: "administrator@vSphere.local"
+- vcenter_password: "Admin@12345"
+- inventory_hostname: "192.168.122.211"
+    
+    
 # ESXi settings
 - esxi_hostname: 10.76.33.6
 - esxi_username: root
