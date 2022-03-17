@@ -1,13 +1,13 @@
+
 ---
 - name: ESXi patching
-  hosts: all
-
+  hosts: localhost
+  gather_facts: true
   vars:
     vcenter_hostname: "192.168.122.212"
     vcenter_username: "administrator@vSphere.local"
     vcenter_password: "Admin@12345"
     inventory_hostname: "192.168.122.211"
-
   tasks:
     - name: ESXi enter maintenance
       vmware_maintenancemode:
