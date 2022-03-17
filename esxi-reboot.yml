@@ -4,13 +4,18 @@
     - lab_vcenter_vars.yml
   hosts: localhost
   tasks:
-    - name: start main1 
-      vmware_maintenancemode:
+    - name: start main1
+      community.vmware.vmware_host_powerstate:
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
-        validate_certs: no 
+        validate_certs: no
         esxi_hostname: "{{ esxi_hostname }}"
-        evacuate: yes
         validate_certs: no
         timeout: 3600
+        state: reboot-host
+      delegate_to: localhost
+      register: reboot_host
+
+    - debug:
+        var: reboot_host
