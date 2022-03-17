@@ -1,20 +1,16 @@
-
----
-- name: ESXi patching
-  hosts: localhost
-  gather_facts: true
+- name: Esxi maintenance
+  gather_facts: yes
   vars_files:
-    - vcenter_vars.yml
+    - lab_vcenter_vars.yml
+  hosts: localhost
   tasks:
-    - name: ESXi maintenance
+    - name: start main1 
       vmware_maintenancemode:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        esxi_hostname: "{{ inventory_hostname }}"
+        hostname: "{{ vcenter_server }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        validate_certs: no 
+        esxi_hostname: "{{ esxi_hostname }}"
         evacuate: yes
         validate_certs: no
         timeout: 3600
-        state: present
-      delegate_to: localhost
-  
