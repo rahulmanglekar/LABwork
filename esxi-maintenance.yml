@@ -3,13 +3,10 @@
 - name: ESXi patching
   hosts: localhost
   gather_facts: true
-  vars:
-    vcenter_hostname: "192.168.122.212"
-    vcenter_username: "administrator@vSphere.local"
-    vcenter_password: "Admin@12345"
-    inventory_hostname: "192.168.122.211"
+  vars_files:
+    - vcenter_vars.yml
   tasks:
-    - name: ESXi enter maintenance
+    - name: ESXi maintenance
       vmware_maintenancemode:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
