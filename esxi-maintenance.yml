@@ -8,16 +8,16 @@
     inventory_hostname: "192.168.122.211"
 
   tasks:
-  - name: ESXi enter maintenance
-    register: status
-    vmware_maintenancemode:
-      hostname: "{{ vcenter_hostname }}"
-      username: "{{ vcenter_username }}"
-      password: "{{ vcenter_password }}"
-      esxi_hostname: "{{ inventory_hostname }}"
-      evacuate: yes
-      validate_certs: no
-      timeout: 3600
-      state: present
-    delegate_to: localhost
-  - debug: var=status.msg
+    - name: ESXi enter maintenance
+      register: status
+      vmware_maintenancemode:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ inventory_hostname }}"
+        evacuate: yes
+        validate_certs: no
+        timeout: 3600
+        state: present
+      delegate_to: localhost
+  
