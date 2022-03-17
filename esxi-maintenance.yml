@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: ESXi patching
+  hosts: all
 
   vars:
     vcenter_hostname: "192.168.122.212"
@@ -9,7 +10,6 @@
 
   tasks:
     - name: ESXi enter maintenance
-      register: status
       vmware_maintenancemode:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
