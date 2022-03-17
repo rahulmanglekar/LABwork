@@ -14,6 +14,7 @@
         validate_certs: no
         timeout: 3600
         state: reboot-host
+        force: yes
       delegate_to: localhost
       register: reboot_host
 
