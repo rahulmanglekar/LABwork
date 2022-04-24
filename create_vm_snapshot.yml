@@ -1,7 +1,7 @@
 - name: Create a snapshot
   vars_files:
     - ocpcluster_vars.yml
-  hosts: localhost
+#  hosts: localhost
   tasks:
     - name: Create a snapshot of {{ guest_name }}
         community.vmware.vmware_guest_snapshot:
@@ -15,4 +15,4 @@
         snapshot_name: snap1
         description: "{{ guest_name }}"_snap1
       delegate_to: localhost
-      register: vm_result
+#      register: vm_result
