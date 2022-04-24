@@ -12,16 +12,16 @@
 #        - ocpcluster_vars.yml
   tasks:
     - name: Create a snapshot of {{ guest_name }}
-        community.vmware.vmware_guest_snapshot:
-          hostname: "{{ vcenter_hostname }}"
-          username: "{{ vcenter_username }}"
-          password: "{{ vcenter_password }}"
-          datacenter: "{{ datacenter_name }}"
-          folder: "/datastore1/{{ guest_name }}/"
-          name: "{{ guest_name }}"
-          state: present
-          snapshot_name: snap1
-          description: "{{ guest_name }}"_snap1
-          validate_certs: no
-        delegate_to: localhost
-#      register: vm_result
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ datacenter_name }}"
+        folder: "/datastore1/{{ guest_name }}/"
+        name: "{{ guest_name }}"
+        state: present
+        snapshot_name: snap1
+        description: "{{ guest_name }}"_snap1
+        validate_certs: no
+      delegate_to: localhost
+      register: vm_result
