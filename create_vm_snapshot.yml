@@ -11,40 +11,7 @@
     guest_name: anne-speares.imlab.com
 #  vars_files:
 #        - ocpcluster_vars.yml
-  tasks:
-# 
-#    - name: Gather snapshot information about the virtual machine in the given vCenter
-#      community.vmware.vmware_guest_snapshot_info:
-#        hostname: "{{ vcenter_hostname }}"
-#        username: "{{ vcenter_username }}"
-#        password: "{{ vcenter_password }}"
-#        datacenter: "{{ datacenter_name }}"
-#        folder: "/{{ datacenter_name }}/vm/"
-#        name: "{{ guest_name }}"
-#      delegate_to: localhost
-#      register: snapshot_info
-#    
-#    - debug:
-#        msg = "{{ snapshot_info }}"
-  
-    - name: Create a snapshot of {{ guest_name }}
-      community.vmware.vmware_guest_snapshot:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        datacenter: "{{ datacenter_name }}"
-        folder: "/datastore1/"
-        name: "{{ guest_name }}"
-        state: present
-        snapshot_name: snap1
-        description: snapshot1
-        validate_certs: no
-      delegate_to: localhost
-      register: vm_result
-      
-    - debug:
-        msg = "{{ vm_result }}"
-  
+  tasks:  
     - name: Create a snapshot of {{ guest_name }} Second
       community.vmware.vmware_guest_snapshot:
         hostname: "{{ vcenter_hostname }}"
