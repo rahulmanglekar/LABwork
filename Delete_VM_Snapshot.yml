@@ -1,0 +1,27 @@
+---
+- name: Remove a snapshot
+  hosts: localhost
+  ignore_errors: yes
+  gather_facts: yes
+  vars:
+    vcenter_hostname: 10.100.1.102
+    vcenter_username: administrator@imocplab.com
+    vcenter_password: P@$$w0rd
+    datacenter_name: ocpdc
+    guest_name: anne-speares.imlab.com
+#  vars_files:
+#        - ocpcluster_vars.yml
+  tasks:  
+    - name: Remove a snapshot of {{ guest_name }}
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ datacenter_name }}"
+        folder: "/{{ datacenter_name }}"
+        name: "{{ guest_name }}"
+        state: absent
+        snapshot_name: snap3
+        validate_certs: no
+      delegate_to: localhost
+...
