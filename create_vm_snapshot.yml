@@ -22,8 +22,9 @@
         name: "{{ guest_name }}"
       delegate_to: localhost
       register: snapshot_info
-  
-    - debug: msg="{{ snapshot_info }}"
+    
+    - debug:
+        msg = "{{ snapshot_info }}"
   
     - name: Create a snapshot of {{ guest_name }}
       community.vmware.vmware_guest_snapshot:
@@ -40,4 +41,6 @@
       delegate_to: localhost
       register: vm_result
       
-  - debug: msg="{{ vm_result }}"
+    - debug:
+        msg = "{{ vm_result }}"
+  ...
