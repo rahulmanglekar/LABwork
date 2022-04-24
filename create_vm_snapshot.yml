@@ -21,7 +21,7 @@
         name: "{{ guest_name }}"
         state: present
         snapshot_name: snap1
-        description: "{{ guest_name }}"_snap1
+        description: snapshot1
         validate_certs: no
       delegate_to: localhost
       register: vm_result
