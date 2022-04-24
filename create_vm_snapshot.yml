@@ -1,6 +1,7 @@
 ---
 - name: Create a snapshot
   hosts: localhost
+  ignore_errors: yes
   gather_facts: yes
   vars:
     vcenter_hostname: 10.100.1.102
@@ -43,5 +44,40 @@
       
     - debug:
         msg = "{{ vm_result }}"
-     
+  
+    - name: Create a snapshot of {{ guest_name }} Second
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ datacenter_name }}"
+        folder: "/{{ datacenter_name }}/vm/"
+        name: "{{ guest_name }}"
+        state: present
+        snapshot_name: snap2
+        description: snapshot2
+        validate_certs: no
+      delegate_to: localhost
+      register: vm_result2
+      
+    - debug:
+        msg = "{{ vm_result2 }}"
+          
+    - name: Create a snapshot of {{ guest_name }} Second
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ datacenter_name }}"
+        folder: "/{{ datacenter_name }}"
+        name: "{{ guest_name }}"
+        state: present
+        snapshot_name: snap3
+        description: snapshot3
+        validate_certs: no
+      delegate_to: localhost
+      register: vm_result3
+      
+    - debug:
+        msg = "{{ vm_result3 }}"
 ...
