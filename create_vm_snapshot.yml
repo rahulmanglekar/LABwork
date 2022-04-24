@@ -3,8 +3,12 @@
   hosts: localhost
   gather_facts: no
   vars_files:
-    - ocpcluster_vars.yml
-#  hosts: localhost
+    vcenter_hostname: 10.100.1.102
+    vcenter_username: administrator@imocplab.com
+    vcenter_password: P@$$w0rd
+    datacenter_name: ocpdc
+    guest_name: anne-speares.imlab.com
+#        - ocpcluster_vars.yml
   tasks:
     - name: Create a snapshot of {{ guest_name }}
         community.vmware.vmware_guest_snapshot:
