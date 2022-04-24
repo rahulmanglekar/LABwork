@@ -2,12 +2,13 @@
 - name: Create a snapshot
   hosts: localhost
   gather_facts: no
-  vars_files:
+  vars:
     vcenter_hostname: 10.100.1.102
     vcenter_username: administrator@imocplab.com
     vcenter_password: P@$$w0rd
     datacenter_name: ocpdc
     guest_name: anne-speares.imlab.com
+#  vars_files:
 #        - ocpcluster_vars.yml
   tasks:
     - name: Create a snapshot of {{ guest_name }}
