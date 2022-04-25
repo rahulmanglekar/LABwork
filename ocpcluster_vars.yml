@@ -1,6 +1,6 @@
 # Global Settings
-- vcenter_hostname: 10.100.1.102
+- vcenter_hostname: 10.100.1.xxx
 - vcenter_username: administrator@imocplab.com
-- vcenter_password: P@$$w0rd
-- datacenter_name: ocpdc
-- guest_name: anne-speares.imlab.com
+- vcenter_password: xxxx
+- datacenter_name: xxx
+- guest_name: anne-spearesxxx
