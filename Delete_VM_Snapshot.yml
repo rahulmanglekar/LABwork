@@ -4,11 +4,11 @@
   ignore_errors: yes
   gather_facts: yes
   vars:
-    vcenter_hostname: 10.100.1.102
-    vcenter_username: administrator@imocplab.com
-    vcenter_password: P@$$w0rd
+    vcenter_hostname: 10.100.1.xxx
+    vcenter_username: xxxx
+    vcenter_password: xxxxxx
     datacenter_name: ocpdc
-    guest_name: anne-speares.imlab.com
+    guest_name: xxxxx
 #  vars_files:
 #        - ocpcluster_vars.yml
   tasks:  
