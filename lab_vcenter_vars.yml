@@ -1,9 +1,9 @@
 ---
 # Global Settings
-- vcenter_server: 192.168.122.212
+- vcenter_server: 192.168.122.xxx
 - vcenter_user: administrator@vsphere.local
-- vcenter_pass: Admin@12345
-- datacenter: Datacenter
+- vcenter_pass: xxxxx
+- datacenter: xxxx
 #- cluster: Asia-Cluster1
 
 # ESXi settings
@@ -13,7 +13,7 @@
 
 # VM settings
 - vm_name: VM_129
-- vm_ipaddr: 192.168.122.129
+- vm_ipaddr: 192.168.122.xxx
 - template_name: RHEL7
 - datastore: datastore1
 - network: VM Network
