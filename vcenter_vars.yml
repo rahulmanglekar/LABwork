@@ -1,21 +1,21 @@
 ---
 # Global Settings
-- vcenter_server: 10.65.22.1
+- vcenter_server: 10.65.xxx
 - vcenter_user: administrator@vsphere.local
-- vcenter_pass: Esxi@123$%
+- vcenter_pass: xxxx
 - datacenter: Asia-Datacenter1
 - cluster: Asia-Cluster1
 
 - vcenter_hostname: "192.168.122.212"
 - vcenter_username: "administrator@vSphere.local"
-- vcenter_password: "Admin@12345"
-- inventory_hostname: "192.168.122.211"
+- vcenter_password: "xxxx"
+- inventory_hostname: "192.168.122.xxx"
     
     
 # ESXi settings
-- esxi_hostname: 10.76.33.6
+- esxi_hostname: 10.76.xx.x
 - esxi_username: root
-- esxi_password: esxi123
+- esxi_password: xxxxx
 
 # VM settings
 - vm_name: VM_168
