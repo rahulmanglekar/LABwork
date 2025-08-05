@@ -1,0 +1,9 @@
+---
+- name: Test book
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: hellow world
+      ansible.builtin.debug:
+        msg: "Hello World !"        - 
